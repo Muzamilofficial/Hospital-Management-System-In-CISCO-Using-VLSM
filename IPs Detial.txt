@@ -1,0 +1,39 @@
+HTTP/DNS Server: 192.168.1.146
+FTP Server: 192.168.1.148
+SMTP Server: 192.168.1.149
+Network ID: 192.168.1.0
+Subnet Mask: 255.25.255.240 OR /28
+
+Router>en
+Router#config terminal
+Router(config)#ip dhcp pool DHCPBYCLI1
+Router(dhcp-config)#network 192.168.1.32 255.255.255.240
+Router(dhcp-config)#default-router 192.168.1.1
+Router(dhcp-config)#dns-server 192.168.1.146  // DNS server addresses
+Router(dhcp-config)#exit
+Router(config)#ip dhcp excluded-address 192.168.1.32
+Router(config)#exit
+
+Static Routing:
+
+
+Bisma@81534
+Data Source=SQL8005.site4now.net;Initial Catalog=db_aa3983_dbmsss;User Id=db_aa3983_dbmsss_admin;Password=Bisma@81534
+
+
+do show ip route
+ip router 192.168.1.80 255.255.255.240 192.168.1.2
+
+FTP Server:
+ftp 192.168.1.148
+muzamil
+123
+dir
+quit
+
+dir
+put sampleFile.txt
+get sampleFile.txt
+
+put MuzamilFTP.txt
+delete TestFTP5.txt
